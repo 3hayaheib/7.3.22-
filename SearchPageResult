@@ -1,0 +1,104 @@
+package Pages;
+
+import Utilities.Utilities;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class SearchPageResult {
+    WebDriver driver;
+    WebElement element;
+    Utilities utilities = new Utilities(driver);
+
+    @FindBy(xpath ="//body/div[1]/div[3]/form[1]/div[1]/div[1]/div[1]/div[1]/div[2]/input[1]")
+    WebElement GoogleAndALinkToTheAceWebsite;
+
+    @FindBy(xpath ="//input[@id='search']")
+    WebElement WebSearchBar;
+
+    @FindBy(xpath = "//body/div[@id='navbar-carousel']/a[1]")
+   WebElement ButtonsOnTheSite;
+
+    @FindBy(xpath = "//body/footer[1]/a[1]/i[1]")
+    WebElement ArrowsWithinTheSite;
+
+    @FindBy(xpath ="//button[contains(text()]")
+     WebElement PossibilityOfBrowsing;
+
+    @FindBy(xpath = "//div[@id='loginSection']")
+    WebElement RegisterToAce;
+
+    @FindBy(xpath ="//body/div[5]/div[1]/div[2]/div[1]/div[3]/div[1]")
+    WebElement SearchListContent;
+
+    @FindBy(xpath ="//body/div[7]/div[3]/a[1]/img[1]" )
+    WebElement ActivityOptions;
+
+    @FindBy(xpath ="//body/section[1]/div[1]/div[1]/div[1]/div[61]/div[1]/a[2]" )
+    WebElement ClickOnTheProductAce;
+
+    @FindBy(xpath ="//body/section[1]/div[1]/div[1]/div[1]/div[61]/div[1]/a[3]" )
+    WebElement ClickToBuy;
+
+    @FindBy(xpath = "//body/div[6]/div[1]/div[2]/div[4]")
+    WebElement PriceBeforeAndAfterLow;
+
+    @FindBy(xpath ="//body/div[6]/div[1]/div[2]/div[6]/button[1]")
+    WebElement AddToCart;
+
+    @FindBy(xpath = "//button[contains(text()]")
+    WebElement AddAnotherProduct;
+
+    public SearchPageResult(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
+
+    public WebElement GoogleAndALinkToTheAceWebsite(){
+        return GoogleAndALinkToTheAceWebsite;
+    }
+   public WebElement WebsiteSearchBar() {
+        return WebSearchBar;
+    }
+    public WebElement ButtonsOnTheWebSite(){
+        return ButtonsOnTheSite;
+    }
+
+    public WebElement ArrowsWithinTheSite() {
+        return ArrowsWithinTheSite;
+    }
+
+    public WebElement PresentsThePossibilityOfBrowsing() {
+    return  PossibilityOfBrowsing ;
+   }
+
+    public WebElement RegisterToAceSite(){
+       return RegisterToAce;
+    }
+
+    public WebElement SearchListContent() {
+        return SearchListContent;
+    }
+    public WebElement SelectTheActivityOptions (){
+        return ActivityOptions;
+
+    }
+    public WebElement ClickOnTheProduct (){
+        return ClickOnTheProductAce;
+    }
+
+    public WebElement ClickToBuy(){
+        return ClickToBuy;
+    }
+    public WebElement ProductPriceBeforeAndAfterLow(){
+       return PriceBeforeAndAfterLow;
+    }
+    public WebElement AddToCart(){
+        return AddToCart;
+    }
+    public WebElement AddAnotherProduct(){
+        return AddAnotherProduct;
+    }
+
+}

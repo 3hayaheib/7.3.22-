@@ -1,0 +1,39 @@
+package Pages;
+
+import Utilities.Utilities;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+
+import java.io.IOException;
+
+    public class BasePage {
+
+
+        public WebDriver driver;
+        public String baseUrl;
+        public HomePage homePage;
+        public SearchPageResult searchPage;
+        public Utilities utilities;
+
+
+        @BeforeTest
+        public void setUp(){
+            baseUrl = "https://www.ace.co.il/";
+            System.setProperty("webdriver.chrome.driver", "3C:\\Users\\haya\\Downloads\\chromedriver_win32\\chromedriver.exe");
+            driver = new ChromeDriver();
+            homePage = new HomePage(driver);
+            searchPage = new SearchPageResult(driver);
+            utilities = new Utilities(driver);
+            driver.manage().deleteAllCookies();
+            driver.manage().window().maximize();
+            driver.get(baseUrl);
+            System.out.println("It will be executed first");
+       }
+
+        @AfterTest
+        public void tearDown() throws IOException {
+            driver.quit();
+        }
+    }

@@ -1,0 +1,39 @@
+package Pages;
+import Utilities.Utilities;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+    public class HomePage {
+
+        WebDriver driver;
+        WebElement element;
+        Utilities utilities = new Utilities(driver);
+
+        @FindBy(xpath = "//input[@id='search']")
+        WebElement searchInput;
+
+
+        public HomePage(WebDriver driver){
+            this.driver = driver;
+            PageFactory.initElements(driver, this);
+        }
+
+        public void searchInput(String Item){
+            searchInput.sendKeys(Item);
+            searchInput.submit();
+        }
+
+
+        public void submit(String Register) {
+            searchInput.sendKeys(Register);
+            searchInput.submit();
+
+        }
+        public void Button (String ClickAdd) {
+            searchInput.sendKeys(ClickAdd);
+            searchInput.submit();
+
+        }
+    }
